@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickBite Delivery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>QuickBite Delivery</h1>
+      <p>Hot meals delivered in under 30 minutes.</p>
+    </div>
+    <button id="view-cart-btn">View Cart (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <main>
+    <section class="filters">
+      <input id="search-input" type="search" placeholder="Search foods or restaurants..." />
+      <select id="category-select">
+        <option value="all">All Categories</option>
+        <option value="pizza">Pizza</option>
+        <option value="burgers">Burgers</option>
+        <option value="sushi">Sushi</option>
+        <option value="dessert">Dessert</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>Popular Near You</h2>
+      <div id="menu-grid" class="menu-grid"></div>
+    </section>
+
+    <section class="status-card" id="delivery-status">
+      <h2>Live Delivery Tracker</h2>
+      <p id="status-text">Place an order to start tracking your delivery.</p>
+      <div class="progress-wrap">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cart-panel" class="cart-panel hidden">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="close-cart">✕</button>
+    </div>
+    <ul id="cart-items"></ul>
+    <p class="cart-total">Total: $<span id="cart-total">0.00</span></p>
+    <button id="checkout-btn" class="checkout-btn">Place Order</button>
+  </aside>
+
+  <template id="menu-item-template">
+    <article class="menu-item">
+      <img />
+      <div class="menu-item-info">
+        <h3></h3>
+        <p class="restaurant"></p>
+        <p class="price"></p>
+      </div>
+      <button>Add</button>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
